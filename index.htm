@@ -62,8 +62,17 @@ Style guide to contributors:
     <section id='abstract'>
       This specification defines an Application Management API that for 
       example exposes methods for installing and uninstalling applications and 
-      methods for launching and terminating applications. A typical use case for 
-      this API is a web based home screen (application dashboard. 
+      methods for launching and terminating applications. Typical use cases for 
+      this API are web based home screens (application dashboards) and web 
+      based application market places/applications portals. 
+      
+      <div class="note">
+        <p>
+          This specification should be rewritten to use promises,
+          (<dfn id="promise"><code><a href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-promise-objects">Promise</a></code></dfn>) 
+          instead of DOMRequest. 
+        </p>
+      </div>          
 
     </section>
     
@@ -71,18 +80,35 @@ Style guide to contributors:
       <section class="informative">
       <h2>Introduction</h2>
 
-      <p>
-        Examples of use cases for this API are:
-      </p>
-      <ul>
-        <li> Web based marketplace / app installer 
-        <li> Web based home screen (application dashboard)
-        <li> Company portal
-      </ul> 
+      <h3>Use cases</h3>
       
       <p>
-        The functionality in this API is.
-      </p>      
+        Mobile platforms have applications that are market places, which allows 
+        users to find applications and install them. Examples are Google Play 
+        and iOS App Store. For a certain platform several market places can 
+        exist, for example Amazon Appstore for Android and Nokia Android app 
+        store. 
+      </p>
+      <p>
+        In a web app eco-system application market places can be provided as web 
+        applications and these market place applications must therefore have 
+        access to an Application Management API that for example can be used to 
+        install applications as well as to list applications that are 
+        already installed from this application provider.
+      </p>
+      
+      <p>
+        Other use cases for a web Application Management API are web based
+        home screens/application dashboards. In a web execution environment 
+        the "home screen" can be implemented as a web application and it is
+        also possible to provide several alternative home screens through 
+        web applications. In this context an Application Management API must 
+        be used to find a list of installed apps and their icons, launch apps, 
+        handle application events etc. 
+      </p>
+      
+      <h3>Summary of the functionality of this API</h3>   
+              
       <ul>
         <li> Install and uninstall applications
         <li> List all installed applications
